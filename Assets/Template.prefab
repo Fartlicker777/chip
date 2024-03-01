@@ -481,7 +481,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3ed2a8b54f5116946b622729bbe75e4c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -538,7 +538,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -657,6 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bomb: {fileID: 114005092377913010}
   Audio: {fileID: 114863428645509378}
+  chipAudio: {fileID: 82877904317727000}
   chipkms: {fileID: 114266897657621630}
   thing: {fileID: 1869621721705244}
 --- !u!114 &114754373144216098
@@ -698,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ModuleType: chip
   ModuleDisplayName: chip
-  RequiresTimerVisibility: 1
+  RequiresTimerVisibility: 0
 --- !u!114 &114863428645509378
 MonoBehaviour:
   m_ObjectHideFlags: 1

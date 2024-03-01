@@ -14,7 +14,7 @@ MonoBehaviour:
   id: chip
   title: chip
   author: chip
-  description: 
+  description: chip
   version: 
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 0c7c1f2b138390a47acd3399c4f991a6, type: 3}

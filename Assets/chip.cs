@@ -5,16 +5,31 @@ using UnityEngine;
 public class chip : MonoBehaviour {
    public KMBombInfo Bomb;
    public KMAudio Audio;
+    public AudioSource chipAudio;
+    
    public KMSelectable chipkms;
    public GameObject thing;
 
    static int ModuleIdCounter = 1;
    int ModuleId;
    bool ModuleSolved;
-
+    ChipSettings settingsMod = new ChipSettings();
    void Awake () {
       ModuleId = ModuleIdCounter++;
-      KMSelectable kmselectable = chipkms;
+        try
+        {
+            var chipConfigFile = new ModConfig<ChipSettings>("Chip");
+
+            settingsMod = chipConfigFile.Settings;
+            chipConfigFile.Settings = settingsMod;
+            if (!settingsMod.noChipMusic)
+                chipAudio.Play();
+        }
+        catch
+        {
+            chipAudio.Play();
+        }
+        KMSelectable kmselectable = chipkms;
       kmselectable.OnInteract += delegate () { GetComponent<KMBombModule>().HandlePass(); return false; };
    }
 
@@ -60,4 +75,9 @@ public class chip : MonoBehaviour {
       yield return null;
       chipkms.OnInteract();
    }
+}
+
+public class ChipSettings
+{
+    public bool noChipMusic = false;
 }
